@@ -29,6 +29,13 @@
 		<label for="year">Year</label>
 		<input type="text" th:field="*{year}" />
 		<br><br>
+		<label for="categorylist">Category</label>
+		<select th:field="*{category}" class="form-control">
+			<option th:each="category: ${categories}" 
+					th:value="${category.categoryid}"
+					th:text="${category.name}"></option>
+		</select>
+		<br><br>
 		<input type="submit" class="btn btn-success" value="Edit"></input>
 	</form>
 </div>
